@@ -1,0 +1,51 @@
+      ]Performance.runtime '⍴+.×⌿?2 2000 2000⍴1e10'
+
+* Benchmarking "⍴+.×⌿?2 2000 2000⍴1e10"
+             (ms)
+ CPU (avg):  3244
+ Elapsed:    3244
+      )Off
+
+
+⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝
+APRIL(6): (time (april-f "⍴+.×⌿?2 3000 3000⍴1e10"))
+3000 3000
+Evaluation took:
+  12.912 seconds of real time
+  12.937234 seconds of total run time (12.399795 user, 0.537439 system)
+  [ Real times consist of 3.296 seconds GC time, and 9.616 seconds non-GC time. ]
+  [ Run times consist of 3.302 seconds GC time, and 9.636 seconds non-GC time. ]
+  100.19% CPU
+  37,491,614,171 processor cycles
+  11,876,826,032 bytes consed
+  
+#(3000 3000)
+
+⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝
+APRIL(6): (time (april-f "⍴+.×⌿?2 3000 3000⍴1e10"))
+3000 3000
+Evaluation took:
+  12.912 seconds of real time
+  12.937234 seconds of total run time (12.399795 user, 0.537439 system)
+  [ Real times consist of 3.296 seconds GC time, and 9.616 seconds non-GC time. ]
+  [ Run times consist of 3.302 seconds GC time, and 9.636 seconds non-GC time. ]
+  100.19% CPU
+  37,491,614,171 processor cycles
+  11,876,826,032 bytes consed
+  
+#(3000 3000)
+
+#################################################
+~/apl/apldocs/src$ python -q
+>>>> import numpy
+i>>>> import time
+>>>> def mm():
+....    start_time= time.time()
+....    a= numpy.random.randint(0, 1e10, (2, 3000, 3000))
+....    print((a[0,] @ a[1,]).shape)
+....    print(time.time() - start_time)
+....    
+>>>> mm()
+(3000, 3000)
+41.086079359054565
+
