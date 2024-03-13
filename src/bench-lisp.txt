@@ -1,0 +1,19 @@
+
+CL-USER(2): (april:april-f "fib←{⍵≤1:⍵ ⋄ (fib ⍵ - 1)+fib ⍵ - 2}")
+
+#<FUNCTION (LABELS APRIL::∇SELF) {5397F5BB}>
+CL-USER(3): (april:april-f "fib 5")
+5
+5
+CL-USER(4): (april:april-f "fib 6")
+8
+8
+CL-USER(5): (april:april-f "fib 8")
+21
+21
+CL-USER(6): (time (april:april-f "fib 39"))
+63245986
+Evaluation took:
+  20.276 seconds of real time
+  
+63245986

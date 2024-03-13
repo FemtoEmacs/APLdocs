@@ -1,0 +1,34 @@
+
+%=============================================================================
+%                     N I N E S I Z E . T E X  (for convenience only)
+%=============================================================================
+%===============================================================
+% This is a TeX macro for switching to nine point fonts. Taken
+% from  the TeXbook, pages 413 - 415. (For special cases only)
+%===============================================================
+%
+\font\ninerm=amr9
+\font\ninei=ammi9
+\font\ninesy=amsy9
+\font\ninebf=ambx9
+\font\ninett=amtt9
+\font\nineit=amti9
+\font\ninesl=amsl9
+%
+\skewchar\ninei='177
+\skewchar\ninesy='60
+\skewchar\ninett=-1
+%
+\newskip\tglue
+\def\ninepoint{\def\rm{\fam0\ninerm}
+       \textfont0=\ninerm
+       \textfont1=\ninei
+       \textfont2=\ninesy
+       \textfont\itfam=\nineit \def\it{\fam\itfam\nineit}%
+       \textfont\slfam=\ninesl \def\sl{\fam\slfam\ninesl}%
+       \textfont\ttfam=\ninett \def\tt{\fam\ttfam\ninett}%
+       \textfont\bffam=\ninebf \def\bf{\fam\bffam\ninebf}%
+       \tt\tglue=.5em plus.25em minus .15em
+       \normalbaselineskip=11pt
+       \setbox\strutbox=\hbox{\vrule height8pt depth3pt width0pt}%
+       \let\sc=\sevenrm \let\big=\ninebig \normalbaselines\rm}%

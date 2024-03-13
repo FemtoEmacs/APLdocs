@@ -1,0 +1,534 @@
+
+%=============================================================================
+%                            T U G B O A T . T E X
+%=============================================================================
+%========================================================================
+% A TeX file for the paper on APL-TeX (new version, not published)
+%
+% A.Hohti/O.Kanerva (University of Helsinki) April 1987
+%========================================================================
+%
+%
+% Version of August 26, 1987 at 15:00
+%
+%
+%========================================================================
+\input aplstyle              % the file containing the APL definitions
+%========================================================================
+%
+%
+\magnification=\magstep1     % for weak eyes!
+%
+%
+%========================================================================
+\font\bigbf=ambx10                        % for titles
+\font\sltt=amsltt10                       % for file contents inside text
+\font\manual=manfnt at 10pt               % for major METAFONT logo
+\font\minual=manfnt at 9pt                % for minor METAFONT logo
+\input ninesize                           % abstract, references
+%========================================================================
+%
+\def\METAFONT{{\manual META}\-{\manual FONT}}
+\def\metafont{{\minual META}\-{\minual FONT}}
+%
+%========================================================================
+% stylistic definitions
+\def\section#1{\vskip0pt plus .1\vsize
+    \penalty-250\vskip0pt plus-.1\vsize\bigskip
+    \noindent{\bf #1.\ }\nobreak\message{#1}}
+\def\abstract#1{\bigskip\centerline{\hbox{
+       \vbox{\hsize=4.75truein{\ninepoint \noindent ABSTRACT.\enspace#1}}}}}
+\def\APL{{\sl APL}}
+% this definition is from the TeXbook, Ex. 21.3 :
+\def\boxit#1{\vbox{\hrule \hbox{\vrule \kern2pt
+                 \vbox{\kern2pt#1\kern2pt}\kern2pt\vrule}\hrule}}
+% A macro for making references and blocks.
+%
+\newdimen\refindent\newdimen\plusindent
+\newdimen\refskip\newdimen\tempindent
+\newdimen\extraindent
+\newcount\refcount
+%
+% \refskip has to be set by the user! Otherwise \parindent is
+% used, in accordance with \item.
+%
+\refcount=0
+\def\ref#1:#2.-#3\par{\ninepoint % switch to nine point fonts
+\advance\refcount by 1
+\setbox0=\hbox{[\number\refcount]}\refindent=\wd0
+\plusindent=\refskip\extraindent=\refskip
+\advance\plusindent by -\refindent\tempindent=\parindent %
+\parindent=0pt\par\hangindent\extraindent %
+ [\number\refcount]\hskip\plusindent #1:{\sl#2},#3
+\parindent=\tempindent}
+%
+\refskip=\parindent
+%
+%========================================================================
+                              % HEADER
+\null
+\vskip2truecm
+%
+                 \centerline{\bigbf GENERATING AN \APL\ FONT}
+%
+\vskip.75truecm
+%
+                 \centerline{\sl Aarno Hohti and Okko Kanerva}
+%
+\vskip.5truecm
+%
+                 \centerline{\sl University of Helsinki}
+\vskip.5truecm
+\abstract{The \APL\ language is well known for its peculiar
+          symbols which have inhibited the use of this language
+          in many programming environments. Making \APL\
+          documents of good quality has been difficult and
+          expensive. We describe here a simple way how to
+          use \metafont\ to generate an \APL\ font for \TeX\
+          by using existing font definitions as far as possible.}
+\vskip.5truecm
+%========================================================================
+%
+\section{Introduction}
+This note describes an interesting exercise in using
+\METAFONT\ to produce new typefaces by combining letters
+from standard fonts. As we know, the \APL\ language [6] of
+Kenneth Iverson has never gained the popularity it deserves
+which is largely due to its strange symbol set. Indeed,
+true \APL\ users require a special keyboard to support
+the nonstandard but powerful operator symbols. Moreover,
+putting \APL\ into print has always been a problem, and
+modern low cost computerized typesetting programs do
+not usually support \APL\ style. \TeX\ can be used to
+produce high quality printouts for technical text,
+and it would be desirable to have a possibility to
+mix in \APL\ code. The companion program of
+\TeX ---\METAFONT ---provides a full means for a simple generation
+of an \APL\ font for \TeX, and the purpose of this
+note is to inform other people about the result we
+have obtained at the University of Helsinki. Let us note
+that there are at least three other \APL\ fonts available
+for small computer environments. Indeed, the newsletter
+\APL\ {\it Quote Quad\/}\footnote{*}{{\ninepoint Newsletter of SIGAPL,
+the Special Interest Group for \APL. {\it Quote Quad\/} has the same
+status in the world of \APL\ as TUGboat in \TeX{nical} world.}}
+is produced by using TROFF, and there
+exists a Postscript \APL\ font for the Apple Laserwriter [5] and
+another font for the TEXT typesetting system [2].
+
+Consider the following usual kind of function definition in \APL:
+\choosett{apl}
+\begintt
+        @DLS_SUMSQ N;I
+  [1]   S_I_0
+  [2]   @GO(N<I_I+1)/0
+  [3]   S_S+I*2
+  [4]   @GO2
+  [5]   @DL
+\endtt
+\choosett{sltt}%       %@@@@
+How to write in this code, providing that we have a suitable
+font? The \APL\ font should represent the screen
+output style of \APL\ code and obey the same laws of spacing.
+Hence, it should be a typewriter-like typeface with fixed
+spacing; the same approach for representing \TeX\ input was
+adopted by Knuth in the {\TeX}book.
+The {\it verbatim\/} macros have often been used for importing
+screen or paper outputs into \TeX\ documents; some people
+misuse them for an easy construction of tables etc. In
+{\sltt verbatim}, the typewriter mode is entered by the control
+sequence @\begintt@---that mode is ended by
+@\endtt@. In the same vein, we could enter
+the \APL\ mode by the control sequence @\beginapl@,
+and to end it by @\endapl@. However, it is more convenient to
+augment {\sltt verbatim\/} with {\sltt aplstyle\/} so that
+it can be used with several different typewriter-like fonts.
+(The {\it verbatim\/} macros can be found in the {\TeX}book,
+p.\ 421.)  Since {\sltt\char'100\/}
+(the {\it at sign}) is used as the escape character inside {\it verbatim\/}
+mode, our \TeX\ code might (and in fact does) look as follows:
+\def\endsym{\char'134{endtt}}   % just for using \endtt after \begintt
+                                % without actually ending anything
+\choosett{tentt}
+\begintt
+           \choosett{apl}
+           \begintt
+                  @@DLS_SUMSQ N;I
+            [1]   S_I_0
+            [2]   @@GO(N<I_I+1)/0
+            [3]   S_S+I*2
+            [4]   @@GO2
+            [5]   @@DL
+           @endsym
+\endtt
+\choosett{sltt}%                      %@@@@
+The control sequences @\DL@ and @\GO@ are not chosen arbitrarily
+but follow the conventions used in Digital's VAX \APL\ interpreter [1].
+As terminals usually do not support the \APL\ character set, an
+alternative representation by two-letter mnemonics is provided by the
+interpreter. For the most part we have adopted these mnemonics also for our
+\APL\ font. Hence, as an additional bonus the user should find it
+easy to combine his or her \APL\ code with normal \TeX\ code. Thus,
+it is not necessary for a VAX \APL\ user to retype the definitions
+of \APL\ functions in order to be able to use them in documents.
+He or she only has to replace every {\it period\/} used as an
+escape character in Digital's interpreter, by {\sltt\char'100}.
+(There is another syntactical difference between Digital's interpreter
+and \TeX's {\it verbatim\/} mode: for the interpreter
+the third ordinary character after an escape character
+does no longer belong to the escape sequence while \TeX\ admits
+arbitrarily long control sequences.  We take care of this
+by changing certain {\it catcodes\/} temporarily.)
+%
+%
+\choosett{apl}%
+%
+\section{The \APL\ font table}
+\APL\ symbols are divided into two classes: the primitive symbols
+and those obtained by overstriking two primitive ones. The overstrikes
+are traditionally obtained by typing the first symbol, by using
+backspace to go back one space and then typing the second symbol
+{\sl over\/} the first one. However, in modern \APL\ keyboards these
+double symbols are assigned to non-alphanumeric keys (for example,
+to keys under the {\sltt ALT\/} key). We decided to include only the
+primitive \APL\ symbols in the font table; this enabled us to include
+also the lower-case letters, following modern conventions. (The original
+\APL\ letters were restricted to capitals.) The comment symbol
+@"@ is the only exception since it is keyed in as a double quote.
+Our font is a fixed size typeface with strongly slanted letters.
+Moreover, we have followed the style of best books in \APL:
+all symbols should be drawn with a thin pen to get a touch of
+a typewriter. (This point is clearly witnessed, for example, in [5].)
+The places of some symbols are determined by the \TeX\ font tables.
+For example, the hash sign {\sltt\char'043\/} is used for the
+multiplication sign in VAX \APL, and hence the corresponding symbol
+has the the same octal code (043) as the hash sign in \TeX.
+The font table has the following form:          %@@@@
+
+%========================================================================
+%                           table begins
+%========================================================================
+% This macro comes from TUGboat (I (AH) do not remember which number),
+% unsuitable parts are commented out.
+%
+{\baselineskip=0pt \lineskip=0pt
+\newdimen\vu
+%
+%\output={\shipout\vbox{\unvbox255\vskip0.4in}\advancepageno}
+%
+\setbox9=\hbox{\sl 0}
+\def\spike{\hbox to 0pt{\vbox to \ht9{}}}
+\def\cell#1{\hbox to 1\vu{\hfill\char'#1\hfill}\vrule}
+\def\label#1{\vbox to \ht8{\vfill\hbox to 35pt{\hfill\sl '#10\hskip1em%
+                   }\vfill}\vrule}
+%
+\def\seprow{\def\m{\hskip 1\vu{}\vrule height 2pt}\hbox{\m\m\m\m\m\m\m\m}}
+\def\cellrow#1{\setbox8=\vbox{\seprow\hbox{\spike%
+                  \cell{#10}\cell{#11}\cell{#12}\cell{#13}%
+                  \cell{#14}\cell{#15}\cell{#16}\cell{#17}\hfill%
+                  }\seprow\hrule}\hbox{\label{#1}\box8}}
+%
+\def\lcol#1{\hbox to 1\vu{\hfill{\sl #1}\hfill}\hskip .4pt}
+\def\chw#1{\hbox{\char'#1}}
+%
+\def\colw#1{\vbox{\chw{#10}
+                  \chw{#11}
+                  \chw{#12}
+                  \chw{#13}
+                  \chw{#14}
+                  \chw{#15}
+                  \chw{#16}
+                  \chw{#17}}}
+%
+\def\setw#1{\vbox{\colw{#10}
+                  \colw{#11}
+                  \colw{#12}
+                  \colw{#13}
+                  \colw{#14}
+                  \colw{#15}
+                  \colw{#16}
+                  \colw{#17}}}
+%
+\def\getw{\setbox0=\vbox{\setw0\setw1\hbox to \wd9{}\hbox to 1em{}}%
+                  \vu=1.625\wd0}
+%
+    \apl\getw\bigskip             % changed from \null\vfill to \bigskip
+%
+    \centerline{\vbox{%\hbox{\hskip35pt{\sl cmapl10}\hfill}
+%          \vskip20pt
+          \hbox{\hskip35pt\lcol0\lcol1\lcol2\lcol3\lcol4\lcol5\lcol6\lcol7}
+          \vskip 4pt
+          \hbox{\hskip35pt\vbox{\hrule width 8\vu}\vbox{\hrule width 3.6pt}}
+          \cellrow{00}\cellrow{01}\cellrow{02}\cellrow{03}
+          \cellrow{04}\cellrow{05}\cellrow{06}\cellrow{07}
+          \cellrow{10}\cellrow{11}\cellrow{12}\cellrow{13}
+          \cellrow{14}\cellrow{15}\cellrow{16}\cellrow{17}}}}  % removed \vfill
+%                                                       % from the end
+%
+%========================================================================
+%                            table ends
+%========================================================================
+%
+\section{The necessary \METAFONT\ files}
+The whole process started when the first author had a paper
+containing \APL\ symbols and was disappointed with the
+quality of the symbols available on the typewriter. Moreover,
+the secretary who had typed the text had forgot a couple
+of lines in the middle of the paper, and the correction of
+such mistakes seemed to be very clumsy in comparison with
+modern typesetting. Then he decided (together with the second
+author) to remedy the situation by creating an \APL\ font for
+\TeX\ he was using for other kinds of document. Many of the
+\APL\ symbols needed were contained in standard fonts; for example,
+{\it diamond\/} can be found in {\it cmsy10}. For alphanumeric
+characters one could use {\it cmsltt10}. The simplest try for
+a solution of the problem would be to write a list of definitions
+that pick symbols from appropriate fonts. However, this brute force
+method does not really work since these symbols come from
+very different typefaces and, moreover, do not provide a fixed
+typeface. Hence, we decided to find an easy way of producing
+an \APL\ font by using \METAFONT.
+
+As the starting point, we took the font {\it cmtex10}. This is a
+fixed typeface for an extended typewriter-like font including
+some Greek characters and mathematical symbols. The \METAFONT\ file
+for this font, {\sltt cmtex10.mf\/} contains (as usual) a preamble
+that assigns values to several global variables, and the command
+{\sltt generate textset;\/}. Now the {\sl driver\/} file {\sltt textset.mf\/} %@@@@
+contains the commands {\sltt mode\_setup;font\_setup;\/}            %@@@@
+(establishing the values of the variables for this font) and several
+input files from which the \METAFONT\ descriptions of the characters are to
+be found. Since some of these files treat the characters by name and
+since some of the definitions have to be changed (and some dropped),
+we considered it advisable to discard the driver file and to collect
+the separate \METAFONT\ files, together with the preamble, to form a
+large single file {\sltt cmapl10.mf}. The {\sltt .mf\/} character files
+needed for {\sltt cmapl10.mf\/} are the following:
+%
+%
+$$\vbox{\halign{{\sltt#}\hfil && \quad #\hfil\cr
+%
+                      greekl  &  ({\it rho, omega, alpha}) \cr
+                      italms  &  ({\it iota})              \cr
+                      romand  &  (roman digits)            \cr
+                      punct   &  (punctuation symbols)     \cr
+                      romanp  &                            \cr
+                      symbol  &  (math symbols)            \cr
+                      sym     &                            \cr
+                      romanu  &  (uppercase letters)       \cr
+                      romanl  &  (lowercase letters)       \cr
+%
+}}$$
+%
+%
+\section{Definitions}
+\choosett{tentt}%
+The first thing to do is to put {\sltt font\_identifier:="CMAPL";\/}    %@@@@
+and to set {\sltt slant:=0;\/} in the preamble. Many definitions can    %@@@@
+be copied verbatim from the {\sltt .mf\/} files, but some of them
+need changes. The Greek {\it iota}, as given in {\sltt greekl.mf},
+is strange to \APL\ style; we use instead the {\it dotless i\/}
+from {\sltt italms.mf}. Moreover, we used the symbol {\it elt\/}
+(element) from {\sltt sym.mf\/} instead of the Greek {\it epsilon}.
+The symbols {\it del\/} and {\it delta\/} are
+taken from {\sltt symbol.mf\/} (where their names are {\it large triangle\/}
+and {\it large inverted triangle}). However, they are too sturdy
+and too short to be placed in a proper \APL\ font. Further, {\it del\/}
+must be lifted up so that it is vertically aligned with other
+symbols. The modifications are very easy to do, and the modified %@@@@ , by ,and
+definition is shown below.
+%
+%
+\choosett{tentt}
+\begintt
+         % sqrt48 was changed to 6.25 since the del symbol in APL has
+         % a narrower top than the original reversed triangle symbol
+         % rule.nib has been changed to light_rule.nib
+         % bot y3=-d-o has been changed to bot y3=0
+         % top y1=h-d has been changed to top y1=h+2o
+         @null
+         cmchar "Del";
+         beginchar(oct"002",16u#,asc_height#,0);
+         adjust_fit(0,0); pickup light_rule.nib;
+         top y1=h+2o; y2=y1; bot y3=0;
+         .5[x1,x2]=x3=good.x .5w; w:=r:=2x3; lft x1=hround(.5w-u*6.25);
+         draw z1--z2--z3--cycle;    % stroke
+         labels(1,2,3); endchar;
+\endtt
+As can be seen from this example, pen strokes were made thinner.
+Actually only one symbol was directly missing---this is the {\it quad
+box}. However, it can be obtained from the above by adding one control point:
+\begintt
+         cmchar "Quad";
+         beginchar(oct"001",16u#,body_height#,0);
+         adjust_fit(0,0); pickup light_rule.nib;
+         bot y1=0; y2=y1; top y3=h+2o; y4=y3;
+         .5[x1,x2]=x5=good.x .5w; w:=r:=2x5;
+         % The quad box is slightly wider than Del
+         lft x1=hround(.5w-u*7);
+         x3=x1; x4=x2;
+         draw z1--z2--z4--z3--cycle;    % box
+         labels(1,2,3,4); endchar;
+\endtt
+After taking care of special symbols, the letters can be treated
+by finding a suitable value for {\it tilt ratio\/} (slant). Indeed,
+\APL\ letters are {\sl very\/} slanted. We suggest the value
+1/5 for this font (the font {\it cmsl10\/} uses 1/6). One should
+remember to give the command {\sltt font\_setup;\/} after setting {\sltt slant\/} %@@@@
+to 1/5.
+\choosett{sltt}%               %@@@@
+Finally, one has to make the {\it verbatim\/} macros
+suitable for \APL\ style. Since {\it verbatim\/} might be
+used for several different fonts in one document, we decided
+to include a control sequence @\choosett@.
+\choosett{tentt}
+\begintt
+        \def\ifundefined#1{\expandafter\ifx\csname#1\endcsname\relax}
+        \newif\ifapl         \def\aplname{apl}
+        \outer\def\choosett#1{\ifundefined{#1}%
+                \message{Undefined font(?), replaced with cmtt10}%
+                \let\tt=\tentt
+                   \else
+                \def\tt{\expandafter\csname#1\endcsname}%
+                \def\ttname{#1}%
+                \ifx\ttname\aplname\apltrue\else\aplfalse\fi\fi}
+\endtt
+\choosett{sltt}%
+(The control sequence @\ifundefined@ comes from the \TeX{book}, p.\ 308.)
+With the help of @\choosett@, the standard @verbatim@ macros can be used
+with the single change that @\ifapl@, then the @\catcode@ of @A@,\dots,@Z@
+is @\other@ (12) instead of 11 for {\it letter}.  Under \APL\ mode \TeX\
+will then recognize our single-letter control sequences defined, e.g., by
+\choosett{tentt}
+\begintt
+         \def\A#1{\if#1B{\apl\char'174}\else          % stile
+                  \if#1M{\apl\char'004}\fi\fi}        % alpha .
+\endtt
+\choosett{sltt}%
+Unfortunately, we have redefined the standard @\L@, @\O@, @\P@ and @\S@.
+
+The \APL\ symbols not in the font table are obtained---as usual---by
+overstriking two table symbols.
+\choosett{tentt}%
+\begintt
+   \newbox\firstchar\newskip\charwidth
+   \def\overstrike#1#2{\setbox\firstchar=\hbox{#1}\charwidth=\wd\firstchar
+                       #1\hskip-\charwidth#2}
+\endtt
+\choosett{apl}%
+For example, the {\it grade up\/} and {\it grade down\/} symbols
+\G U\ and \G D\ are obtained by striking the {\it stile\/} symbol
+@|@ over \L D\ and \D L, respectively.
+\choosett{tentt}%
+\begintt
+         \def\G#1{\if#1U{\overstrike{\LD}{\AB}}\else      % grade up
+                  \if#1D{\overstrike{\DL}{\AB}}\fi\fi}    % grade down
+\endtt
+Now let us take another example on \APL. The input
+\begintt
+     \choosett{apl}       % in case some other choice is in force
+     \setbox0=\vbox{\hsize=5.7truein
+     \begintt
+         [0]   Z_A1 PROD A2;A;I;V
+         [1]   "RETURNS THE PRODUCT OF THE POLYNOMIALS A1 AND A2
+         [2]   "THE ARGUMENTS ARE GIVEN AS COEFFICIENT ARRAYS
+         [3]   I_@@ROA1
+         [4]   Z_A1@@SO.#A2
+         [5]   LOOP:V_@@ROZ @@DM V[(@@ROI)+1]-1
+         [6]   V_@@ROZ_Z,[(@@ROI)+1]V@@RO0
+         [7]   A_(1+-@@IOV[1])@@SO.#((@@NT(@@IO@@ROV)@@EP(1,(@@ROI)+1))/V)@@RO1
+         [8]   Z_+/[1]A@@RV[(@@ROI)+1]Z
+         [9]   ((@@RO@@ROZ)>@@ROI)/LOOP
+     @endsym
+                    }
+     $$\boxit{\boxit{\box0}}$$
+     \centerline{\sevenrm An APL function for polynomial multiplication}
+\endtt
+%
+gives the output
+%
+\choosett{apl}
+\setbox0=\vbox{\hsize=5.7truein
+\begintt
+      [0]   Z_A1 PROD A2;A;I;V
+      [1]   "RETURNS THE PRODUCT OF THE POLYNOMIALS A1 AND A2
+      [2]   "THE ARGUMENTS ARE GIVEN AS COEFFICIENT ARRAYS
+      [3]   I_@ROA1
+      [4]   Z_A1@SO.#A2
+      [5]   LOOP:V_@ROZ @DM V[(@ROI)+1]-1
+      [6]   V_@ROZ_Z,[(@ROI)+1]V@RO0
+      [7]   A_(1+-@IOV[1])@SO.#((@NT(@IO@ROV)@EP(1,(@ROI)+1))/V)@RO1
+      [8]   Z_+/[1]A@RV[(@ROI)+1]Z
+      [9]   ((@RO@ROZ)>@ROI)/LOOP
+\endtt
+               }
+$$\boxit{\boxit{\box0}}$$
+\centerline{\sevenrm An APL function for polynomial multiplication}
+%
+\section{User extension}
+A modern user of a computerized typesetting facility will probably
+ask if it is possible to extend or modify fonts coming with the
+system. As with [5], where the font has an {\it analytic\/} and a
+{\it bitmapped\/} variant, we can distinguish between the need of modifying
+{\it cmapl10\/} via \METAFONT\ and modification of the pixel files.
+\APL\ symbols of various ``blackness'' or ``thickness'' may be desirable.
+Indeed, in [3] the user input is written with boldface \APL\ symbols
+and the answers from the interpreter with thin ones. Furthermore,
+certain screen previewers use specific small size pixel files, and
+do not support the \APL\ font.
+
+The modification of the font by changing the values of some global
+variables in the preamble of the \METAFONT\ file is easy and can be
+done by following how it is done in standard fonts such as
+{\it cmbx10\/} etc. This is the recommended way, too. However, if
+\METAFONT\ is not available, then one must attack the pixel files.
+For direct hand editing, we use a program that converts a pixel
+file into a (bitmapped) text file acceptable to any standard screen
+editor, and another program reading the edited file back into
+a \TeX\ pixel file. Scaling fonts down to a desired size can be
+done in a similar (but automatic) manner; this facility is needed
+by a previewer (written by the first author) not using runtime
+scaling.
+
+
+\section{References}
+\bigskip
+{
+\ref Digital Equipment Corporation: VAX-11 \APL\ Reference Manual.-
+     1983.
+
+\ref Feldberg, Ian: TEXT: Publication-Quality Characters Come
+     to \APL\ Graphics.- Proceedings of the 1986 \APL\ Conference,
+     SIGAPL, pp.\ 306--313.
+
+\ref Gilman, Leonard, and Allen J.\ Rose: \APL, An Interactive
+     Approach.- John Wiley \& Sons, Inc., 1984.
+
+\ref Grenander, Ulf: Mathematical Experiments on the Computer.-
+     Academic Press, 1982.
+
+\ref Howland, John E.: Typesetting \APL\ Using a Macintosh.-
+     Proceedings of the 1986 \APL\ Conference, SIGAPL, pp.\ 301--305.
+
+\ref Iverson, Kenneth: A Programming Language.- Wiley, New York, 1962.
+
+
+ }
+
+\bigskip
+\section{The address}
+\bigskip
+{\ninepoint\obeylines
+\hskip\refskip University of Helsinki
+\hskip\refskip Department of Mathematics
+\hskip\refskip Hallituskatu 15
+\hskip\refskip SF--00100 HELSINKI
+\hskip\refskip FINLAND
+}
+
+\end
+
+
+%============================================================================
+%
+%============================================================================

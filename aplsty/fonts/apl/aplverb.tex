@@ -1,0 +1,45 @@
+%		aplverb.tex = verbatim.tex
+%
+%
+%	F|ljande macron anv{nds d} man vill f} ut \TeX-kommandon
+%	i klartext.  @text@ ger text i fonten \tt med alla kontroll-
+%	tecken och dylika bevarade (\TeX\ f|rst}r sig endast p} kommandot
+%	@ i denna mode). Man kan ocks} utnyttja \begintt ... \endtt f|r
+%	att beskriva kommandon, d} {r ocks} \obeylines och \obeyspaces
+%	aktiva. Om man vill anv{nda vissa \TeX-kommandon men vill
+%	ocks} displaya n}got i en-kolumn-tabell-form kan man anv{nda
+%	\begindisplay ...\cr ...\cr \enddisplay
+%           Om du vill anv{nda \begintt...\endtt f|r text som inte
+%       ryms p} en sida, kan du ocks} anv{nda \beginlines...\endlines.
+%       Varje rad m}ste d} b|rjas och avslutas med kommandot @.
+\newskip\verbatimindent \verbatimindent=0cm
+\newskip\ttglue{\tt \global\ttglue=.5em plus.25em minus.15em}
+\def\@{\char'100 }
+%
+\outer\def\begindisplay{\obeylines\startdisplay}
+{\obeylines\gdef\startdisplay#1
+    {\catcode`\^^M=5$$#1\halign\bgroup&\hskip\verbatimindent##\hfil\cr}}
+\outer\def\enddisplay{\crcr\egroup$$}
+%
+\chardef\other=12
+\def\ttverbatim{\begingroup \catcode`\\=\other \catcode`\{=\other
+    \catcode`\}=\other \catcode`\$=\other \catcode`\&=\other
+    \catcode`\#=\other \catcode`\%=\other \catcode`\~=\other
+    \catcode`\_=\other \catcode`\^=\other\catcode`\*=\other\catcode`\==\other
+    \obeyspaces \obeylines \tt}
+{\obeyspaces\gdef {\ }}
+%
+\def\begintt{$$\let\par=\endgraf \ttverbatim \parskip=0pt
+    \catcode`\@=0 \parindent=\verbatimindent \rightskip=-5pc \ttfinish}
+{\catcode`\@=0 @catcode`@\=\other % @ is temporary escape character
+    @obeylines % end of line is active
+    @gdef@ttfinish#1^^M#2\endtt{#1@vbox{#2}@endgroup$$}}
+%
+\catcode`\@=\active
+{\obeylines\gdef@{\ttverbatim\spaceskip=\ttglue\let^^M=\ \let@=\endgroup}}
+
+\def\beginlines{\par\begingroup\nobreak\medskip\parindent=0pt
+   \kern1pt\nobreak \obeylines \everypar{\strut}}
+\def\endlines{\kern1pt\endgroup\medbreak\noindent}
+
+\endinput

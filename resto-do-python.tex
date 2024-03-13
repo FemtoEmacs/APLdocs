@@ -1,0 +1,94 @@
+
+\begin{verbatim}
+~/aplf$ python
+Python 3.9.12
+
+>>>> 7+8
+15
+>>>> import socket
+>>>> server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+>>>> server.bind(("localhost", 7342)) 
+>>>> server.listen()
+>>>> client, address = server.accept()
+>>>> client.recv(1024)
+b'Hello, Python, from the Dyalog side.'
+>>>> client.recv(1024)
+b'5040'
+>>>> client.recv(1024)
+b'The factorial of 7 is 5040'
+
+# Now Python send messages
+>>>> client.send(b"Hello Dyalog, from the Python side.")
+35
+>>>> client.send(b"A second message from Python.")
+29
+>>>> client.send(b"A second message from Python.")
+29
+>>>> client.send(b"A second message from Python.")
+29
+
+# Python receives a matrix
+>>>> client.recv(1024)
+b'1 2 3 4 ; 5 6 7 8 ; 9 10 11 12 ;'
+\end{verbatim}
+
+\newpage
+
+\begin{verbatim}
+     )copy conga DRC
+/opt/mdyalog/19.0/64/unicode/ws/conga.dws ⍝ saved 6 08:17:39 2024
+      DRC.Init ''
+0  Conga loaded from: conga35_64.so
+      DRC.Clt 'my socket' 'localhost' 7342 'Text'
+0  my socket
+      DRC.Send 'my socket' 'Hello, Python, from the Dyalog side.'
+0  my socket.Auto00000000
+      !7
+5040
+      DRC.Send 'my socket' (⍕ !7)
+0  my socket.Auto00000001
+      DRC.Send 'my socket' ('The factorial of 7 is ', (⍕ !7))
+0  my socket.Auto00000002
+     ⍝ Now APL receives messages
+     DRC.Wait 'my socket'999999
+0  my socket  Block  Hello Dyalog, from the Python side.
+      ⍴ (DRC.Wait 'my socket'999999)
+4
+      (DRC.Wait 'my socket'999999)[1]
+0
+      (DRC.Wait 'my socket'999999)[4]
+ A second message from Python.
+
+⍝ DRC sends a matrix
+      DRC.Send'my socket'(⍕,(3 4 ⍴ ⍳12),';')
+0  my socket.Auto00000000
+\end{verbatim}
+
+\newpage
+\begin{verbatim}
+~/aplf$ python
+Python 3.9.12
+
+>>>> import numpy
+>>>> import time
+>>>> def main():
+....   start_time= time.time()
+....   a= numpy.random.randint(0, 1e10, (2, 2000, 2000))
+....   print((a[0,] @ a[1,]).shape)
+....   print(time.time() - start_time)
+....   
+>>>> main()
+(2000, 2000)
+12.530713558197021
+>>>> 
+\end{verbatim}
+
+\begin{verbatim}
+     ]PERFORMANCE.runtime '⍴+.×⌿?2 2000 2000⍴1e10'
+
+* Benchmarking "⍴+.×⌿?2 2000 2000⍴1e10"
+             (ms)
+ CPU (avg):  3418
+ Elapsed:    3418
+\end{verbatim}
+

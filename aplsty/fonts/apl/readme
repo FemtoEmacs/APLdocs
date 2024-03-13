@@ -1,0 +1,28 @@
+Thank you for your letter of 27 February. The original purpose
+of our APL font and macros was to solve the immediate problem
+of writing documents with APL code. Therefore, they are free for
+anyone who finds them useful. Some people have requested the font
+and we have sent them the files appended below (with CMAPL10 and
+two conversion programs for downloading pixel files, not given here).
+Further, we have nothing against giving our net address to the
+users because it would be useful to hear about extensions made
+to the system.
+
+The files APLDEF.TEX and TUGBOAT.TEX are identical with the second
+versions sent to you (via BITNET) except for minimal changes (there
+are some corrections and extensions in APLDEF.TEX, and in
+TUGBOAT.TEX one APL line was corrected.) We think the files are
+in a "final" form (at least we are not planning any changes).
+
+Our original purpose was to publish the second version, but the only
+difference was really the removal of the tilde space character (this
+resulted in more complex 1-character macros, but the user cannot
+see any difference; moreover, TeX runs only about 14% slower). Thus,
+we feel that there is no reason to publish a list of errata in
+TUGboat, because any user would inevitably have to use the new
+version (the old one has not been released).
+
+We are adding a file containing sample examples on the use of the
+APL mnemonics.
+
+Aarno Hohti

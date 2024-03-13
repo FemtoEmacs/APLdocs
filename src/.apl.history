@@ -1,0 +1,6 @@
+)LOAD /home/scm/apl/apldocs/src/primes.apl
+]LOAD /home/scm/apl/apldocs/src/primes.apl
+⎕LX ./primes.apl
+⎕LX './primes.apl'
+prm 40
+)off

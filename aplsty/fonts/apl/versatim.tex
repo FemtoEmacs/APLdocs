@@ -1,0 +1,66 @@
+
+%=============================================================================
+%                          V E R S A T I M . T E X
+%=============================================================================
+%
+%
+\newskip\verbatimindent \verbatimindent=0cm
+\newskip\ttglue{\tt \global\ttglue=.5em plus.25em minus.15em}
+\def\@{\char'100 }
+%
+\outer\def\begindisplay{\obeylines\startdisplay}
+{\obeylines\gdef\startdisplay#1
+    {\catcode`\^^M=5$$#1\halign\bgroup&\hskip\verbatimindent##\hfil\cr}}
+\outer\def\enddisplay{\crcr\egroup$$}
+%
+\chardef\other=12
+\def\ttverbatim{\begingroup \catcode`\\=\other \catcode`\{=\other
+    \catcode`\}=\other \catcode`\$=\other \catcode`\&=\other
+    \catcode`\#=\other \catcode`\%=\other \catcode`\~=\other
+    \catcode`\_=\other \catcode`\^=\other\catcode`\*=\other\catcode`\==\other
+%
+\ifapl
+\catcode`\A=12
+\catcode`\B=12
+\catcode`\C=12
+\catcode`\D=12
+\catcode`\E=12
+\catcode`\F=12
+\catcode`\G=12
+\catcode`\H=12
+\catcode`\I=12
+\catcode`\J=12
+\catcode`\K=12
+\catcode`\L=12
+\catcode`\M=12
+\catcode`\N=12
+\catcode`\O=12
+\catcode`\P=12
+\catcode`\Q=12
+\catcode`\R=12
+\catcode`\S=12
+\catcode`\T=12
+\catcode`\U=12
+\catcode`\V=12
+\catcode`\W=12
+\catcode`\X=12
+\catcode`\Y=12
+\catcode`\Z=12
+\fi
+%
+    \obeyspaces \obeylines \tt}
+{\obeyspaces\gdef {\ }}
+%
+\def\begintt{$$\let\par=\endgraf \ttverbatim \parskip=0pt
+    \catcode`\@=0 \parindent=\verbatimindent \rightskip=-5pc \ttfinish}
+{\catcode`\@=0 @catcode`@\=\other % @ is temporary escape character
+    @obeylines % end of line is active
+    @gdef@ttfinish#1^^M#2\endtt{#1@vbox{#2}@endgroup$$}}
+%
+\catcode`\@=\active
+{\obeylines\gdef@{\ttverbatim\spaceskip=\ttglue\let^^M=\ \let@=\endgroup}}
+
+
+\def\beginlines{\par\begingroup\nobreak\medskip\parindent=0pt
+   \kern1pt\nobreak \obeylines \everypar{\strut}}
+\def\endlines{\kern1pt\endgroup\medbreak\noindent}
