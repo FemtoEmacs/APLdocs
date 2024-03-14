@@ -1,7 +1,9 @@
 # APL -- Mode d'Emploi
 This archive contains the source code
 of a LaTeX guide for using the APL array
-processing language.
+processing language. The compiled file,
+which is the only one you may be interested
+in downloading and reading, is **apltutorial.pdf**.
 
 I don't claim that I will teach you how
 to program in APL. I will only show how
@@ -10,7 +12,7 @@ April APL and Dyalog APL. For learning APL,
 I recommend Stefan Kruger's book,
 "Learning APL," which I use myself.
 
-[Learning](https://xpqz.github.io/learnapl/intro.html)
+[Learning APL](https://xpqz.github.io/learnapl/intro.html)
 
 ## A benchmark
 I found a discussion on a computer languages
