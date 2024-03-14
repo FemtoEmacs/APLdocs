@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.3.4)  13 MAR 2024 18:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.3.4)  13 MAR 2024 23:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -100,6 +100,9 @@ Package: inputenc 2021/02/14 v1.3d Input encoding file
    defining Unicode char U+2262 (decimal 8802)
    defining Unicode char U+220A (decimal 8714)
    defining Unicode char U+2217 (decimal 8727)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/alltt.sty
+Package: alltt 2021/01/29 v2.0g defines alltt environment
 )
 (/usr/share/texlive/texmf-dist/tex/latex/mathtools/mathtools.sty
 Package: mathtools 2022/06/29 v1.29 mathematical typesetting tools
@@ -771,20 +774,20 @@ Writing index file apltutorial.idx
 (./apltutorial.aux)
 \openout1 = `apltutorial.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -847,16 +850,16 @@ Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<figs/apl-keyboard.jpg, id=32, 474.27188pt x 175.40532pt>
-File: figs/apl-keyboard.jpg Graphic file (type jpg)
-<use figs/apl-keyboard.jpg>
-Package pdftex.def Info: figs/apl-keyboard.jpg  used on input line 87.
-(pdftex.def)             Requested size: 426.79134pt x 157.84993pt.
+<figs/aplkb-largekeys.jpg, id=32, 498.36188pt x 221.32687pt>
+File: figs/aplkb-largekeys.jpg Graphic file (type jpg)
+<use figs/aplkb-largekeys.jpg>
+Package pdftex.def Info: figs/aplkb-largekeys.jpg  used on input line 88.
+(pdftex.def)             Requested size: 426.79134pt x 189.54712pt.
 [1
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./figs/apl-keyboard.jpg>] 
-[2
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./figs/aplkb-largekeys.jpg
+>] [2
 
 
 ]
@@ -864,59 +867,61 @@ Chapter 1.
 <figs/qwerty-row.jpg, id=41, 408.77719pt x 42.91031pt>
 File: figs/qwerty-row.jpg Graphic file (type jpg)
 <use figs/qwerty-row.jpg>
-Package pdftex.def Info: figs/qwerty-row.jpg  used on input line 98.
+Package pdftex.def Info: figs/qwerty-row.jpg  used on input line 99.
 (pdftex.def)             Requested size: 408.77618pt x 42.91019pt.
 <command.pdf, id=42, 435.21596pt x 435.21596pt>
 File: command.pdf Graphic file (type pdf)
 <use command.pdf>
-Package pdftex.def Info: command.pdf  used on input line 101.
+Package pdftex.def Info: command.pdf  used on input line 102.
 (pdftex.def)             Requested size: 10.57224pt x 10.57487pt.
 LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 
-112.
+113.
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmtt.fd
 File: ts1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
-Overfull \hbox (5.36723pt too wide) in paragraph at lines 112--113
+Overfull \hbox (5.36723pt too wide) in paragraph at lines 113--114
 [][][][][][][][][][][][][][][][][][][][] 
  []
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 119
+LaTeX Font Info:    Trying to load font information for U+msa on input line 120
 .
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 119
+LaTeX Font Info:    Trying to load font information for U+msb on input line 120
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
+Overfull \hbox (5.36723pt too wide) in paragraph at lines 123--124
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+
+ []
+
+<figs/apl-keyboard.jpg, id=43, 474.27188pt x 175.40532pt>
 File: figs/apl-keyboard.jpg Graphic file (type jpg)
 <use figs/apl-keyboard.jpg>
-Package pdftex.def Info: figs/apl-keyboard.jpg  used on input line 131.
+Package pdftex.def Info: figs/apl-keyboard.jpg  used on input line 132.
 (pdftex.def)             Requested size: 474.27072pt x 175.40488pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [1{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc} <./figs/qwerty-
 row.jpg> <./command.pdf>]
-<figs/window-key.jpg, id=56, 43.66313pt x 38.39343pt>
+<figs/window-key.jpg, id=57, 43.66313pt x 38.39343pt>
 File: figs/window-key.jpg Graphic file (type jpg)
 <use figs/window-key.jpg>
-Package pdftex.def Info: figs/window-key.jpg  used on input line 156.
+Package pdftex.def Info: figs/window-key.jpg  used on input line 157.
 (pdftex.def)             Requested size: 43.66301pt x 38.39333pt.
 
-Overfull \hbox (0.98389pt too wide) in paragraph at lines 156--157
+Overfull \hbox (0.98389pt too wide) in paragraph at lines 157--158
 [][] 
  []
 
 File: command.pdf Graphic file (type pdf)
 <use command.pdf>
-Package pdftex.def Info: command.pdf  used on input line 161.
-(pdftex.def)             Requested size: 10.57224pt x 10.57487pt.
-File: command.pdf Graphic file (type pdf)
-<use command.pdf>
-Package pdftex.def Info: command.pdf  used on input line 166.
+Package pdftex.def Info: command.pdf  used on input line 162.
 (pdftex.def)             Requested size: 10.57224pt x 10.57487pt.
 File: command.pdf Graphic file (type pdf)
 <use command.pdf>
@@ -928,41 +933,45 @@ Package pdftex.def Info: command.pdf  used on input line 168.
 (pdftex.def)             Requested size: 10.57224pt x 10.57487pt.
 File: command.pdf Graphic file (type pdf)
 <use command.pdf>
-Package pdftex.def Info: command.pdf  used on input line 170.
+Package pdftex.def Info: command.pdf  used on input line 169.
 (pdftex.def)             Requested size: 10.57224pt x 10.57487pt.
-[2 <./figs/window-key.jpg>]
-Overfull \hbox (32.04346pt too wide) in paragraph at lines 186--187
+File: command.pdf Graphic file (type pdf)
+<use command.pdf>
+Package pdftex.def Info: command.pdf  used on input line 171.
+(pdftex.def)             Requested size: 10.57224pt x 10.57487pt.
+[2 <./figs/apl-keyboard.jpg> <./figs/window-key.jpg>]
+Overfull \hbox (32.04346pt too wide) in paragraph at lines 187--188
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 File: command.pdf Graphic file (type pdf)
 <use command.pdf>
-Package pdftex.def Info: command.pdf  used on input line 200.
+Package pdftex.def Info: command.pdf  used on input line 201.
 (pdftex.def)             Requested size: 10.57224pt x 10.57487pt.
 [3]
-File: command.pdf Graphic file (type pdf)
-<use command.pdf>
-Package pdftex.def Info: command.pdf  used on input line 253.
-(pdftex.def)             Requested size: 11.33592pt x 11.33989pt.
 File: command.pdf Graphic file (type pdf)
 <use command.pdf>
 Package pdftex.def Info: command.pdf  used on input line 254.
 (pdftex.def)             Requested size: 11.33592pt x 11.33989pt.
 File: command.pdf Graphic file (type pdf)
 <use command.pdf>
-Package pdftex.def Info: command.pdf  used on input line 256.
-(pdftex.def)             Requested size: 11.33592pt x 11.33989pt.
-File: command.pdf Graphic file (type pdf)
-<use command.pdf>
-Package pdftex.def Info: command.pdf  used on input line 256.
-(pdftex.def)             Requested size: 11.33592pt x 11.33989pt.
-File: command.pdf Graphic file (type pdf)
-<use command.pdf>
-Package pdftex.def Info: command.pdf  used on input line 256.
+Package pdftex.def Info: command.pdf  used on input line 255.
 (pdftex.def)             Requested size: 11.33592pt x 11.33989pt.
 File: command.pdf Graphic file (type pdf)
 <use command.pdf>
 Package pdftex.def Info: command.pdf  used on input line 257.
+(pdftex.def)             Requested size: 11.33592pt x 11.33989pt.
+File: command.pdf Graphic file (type pdf)
+<use command.pdf>
+Package pdftex.def Info: command.pdf  used on input line 257.
+(pdftex.def)             Requested size: 11.33592pt x 11.33989pt.
+File: command.pdf Graphic file (type pdf)
+<use command.pdf>
+Package pdftex.def Info: command.pdf  used on input line 257.
+(pdftex.def)             Requested size: 11.33592pt x 11.33989pt.
+File: command.pdf Graphic file (type pdf)
+<use command.pdf>
+Package pdftex.def Info: command.pdf  used on input line 258.
 (pdftex.def)             Requested size: 11.33592pt x 11.33989pt.
  (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
@@ -971,57 +980,56 @@ File: lstlang1.sty 2023/02/27 1.9 listings language file
 File: lstlang2.sty 2023/02/27 1.9 listings language file
 )
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 275.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 276.
  [4]
 File: command.pdf Graphic file (type pdf)
 <use command.pdf>
-Package pdftex.def Info: command.pdf  used on input line 323.
+Package pdftex.def Info: command.pdf  used on input line 324.
 (pdftex.def)             Requested size: 10.79802pt x 10.8001pt.
 LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 3
-24.
+25.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <14.4> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 324.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 325.
 File: command.pdf Graphic file (type pdf)
 <use command.pdf>
-Package pdftex.def Info: command.pdf  used on input line 329.
+Package pdftex.def Info: command.pdf  used on input line 330.
 (pdftex.def)             Requested size: 10.79802pt x 10.8001pt.
  [5]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [6]
-<figs/aplkb-largekeys.jpg, id=82, 498.36188pt x 221.32687pt>
 File: figs/aplkb-largekeys.jpg Graphic file (type jpg)
 <use figs/aplkb-largekeys.jpg>
-Package pdftex.def Info: figs/aplkb-largekeys.jpg  used on input line 406.
+Package pdftex.def Info: figs/aplkb-largekeys.jpg  used on input line 407.
 (pdftex.def)             Requested size: 498.36066pt x 221.32631pt.
 
-Overfull \hbox (14.66379pt too wide) in paragraph at lines 405--407
+Overfull \hbox (14.66379pt too wide) in paragraph at lines 406--408
 [] 
  []
 
-[7 <./figs/aplkb-largekeys.jpg>]
+[7]
 File: figs/aplkb-largekeys.jpg Graphic file (type jpg)
 <use figs/aplkb-largekeys.jpg>
-Package pdftex.def Info: figs/aplkb-largekeys.jpg  used on input line 424.
+Package pdftex.def Info: figs/aplkb-largekeys.jpg  used on input line 425.
 (pdftex.def)             Requested size: 498.36066pt x 221.32631pt.
 
-Overfull \hbox (14.66379pt too wide) in paragraph at lines 423--425
+Overfull \hbox (14.66379pt too wide) in paragraph at lines 424--426
 [] 
  []
 
 
-LaTeX Warning: Command \textendash invalid in math mode on input line 444.
+LaTeX Warning: Command \textendash invalid in math mode on input line 445.
 
 [8]
 Chapter 2.
 <figs/dyalog-save-ws.jpg, id=89, 341.77687pt x 161.10187pt>
 File: figs/dyalog-save-ws.jpg Graphic file (type jpg)
 <use figs/dyalog-save-ws.jpg>
-Package pdftex.def Info: figs/dyalog-save-ws.jpg  used on input line 470.
+Package pdftex.def Info: figs/dyalog-save-ws.jpg  used on input line 472.
 (pdftex.def)             Requested size: 341.77603pt x 161.10147pt.
 [9
 
@@ -1029,15 +1037,15 @@ Package pdftex.def Info: figs/dyalog-save-ws.jpg  used on input line 470.
 <figs/apl-aspas-barra-T.jpg, id=93, 474.27188pt x 175.40532pt>
 File: figs/apl-aspas-barra-T.jpg Graphic file (type jpg)
 <use figs/apl-aspas-barra-T.jpg>
-Package pdftex.def Info: figs/apl-aspas-barra-T.jpg  used on input line 488.
+Package pdftex.def Info: figs/apl-aspas-barra-T.jpg  used on input line 490.
 (pdftex.def)             Requested size: 474.27072pt x 175.40488pt.
 <figs/sharp-trwp.jpg, id=94, 280.79906pt x 57.96657pt>
 File: figs/sharp-trwp.jpg Graphic file (type jpg)
 <use figs/sharp-trwp.jpg>
-Package pdftex.def Info: figs/sharp-trwp.jpg  used on input line 495.
+Package pdftex.def Info: figs/sharp-trwp.jpg  used on input line 497.
 (pdftex.def)             Requested size: 280.79837pt x 57.96642pt.
 
-Overfull \hbox (6.76573pt too wide) in paragraph at lines 497--500
+Overfull \hbox (6.76573pt too wide) in paragraph at lines 499--502
 []\OT1/cmr/m/n/14.4 The next time I use the Dya-log ecosys-tem, I can down-load
  the saved workspace
  []
@@ -1045,12 +1053,12 @@ Overfull \hbox (6.76573pt too wide) in paragraph at lines 497--500
 <figs/loadws.jpg, id=95, 293.59688pt x 94.10156pt>
 File: figs/loadws.jpg Graphic file (type jpg)
 <use figs/loadws.jpg>
-Package pdftex.def Info: figs/loadws.jpg  used on input line 503.
+Package pdftex.def Info: figs/loadws.jpg  used on input line 505.
 (pdftex.def)             Requested size: 293.59615pt x 94.10132pt.
 <figs/dsrc.jpg, id=96, 359.09157pt x 189.70876pt>
 File: figs/dsrc.jpg Graphic file (type jpg)
 <use figs/dsrc.jpg>
-Package pdftex.def Info: figs/dsrc.jpg  used on input line 525.
+Package pdftex.def Info: figs/dsrc.jpg  used on input line 527.
 (pdftex.def)             Requested size: 359.09068pt x 189.70828pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1059,10 +1067,10 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <figs/link-import.jpg, id=100, 261.22594pt x 179.16937pt>
 File: figs/link-import.jpg Graphic file (type jpg)
 <use figs/link-import.jpg>
-Package pdftex.def Info: figs/link-import.jpg  used on input line 545.
+Package pdftex.def Info: figs/link-import.jpg  used on input line 547.
 (pdftex.def)             Requested size: 261.22528pt x 179.16893pt.
 [11 <./figs/dsrc.jpg> <./figs/link-import.jpg>]
-Overfull \hbox (1.32431pt too wide) in paragraph at lines 572--581
+Overfull \hbox (1.32431pt too wide) in paragraph at lines 574--583
 \OT1/cmr/m/n/14.4 After link-ing [][]\OT1/cmtt/m/n/14.4 dsrc []\OT1/cmr/m/n/14.
 4 to the root workspace [][]\OT1/cmtt/m/n/14.4 #[]\OT1/cmr/m/n/14.4 , I tested 
 the func-tions and workspaces
@@ -1071,42 +1079,42 @@ the func-tions and workspaces
 <srcfigs/edwindow.jpg, id=105, 394.47375pt x 111.41624pt>
 File: srcfigs/edwindow.jpg Graphic file (type jpg)
 <use srcfigs/edwindow.jpg>
-Package pdftex.def Info: srcfigs/edwindow.jpg  used on input line 583.
+Package pdftex.def Info: srcfigs/edwindow.jpg  used on input line 585.
 (pdftex.def)             Requested size: 394.47278pt x 111.41597pt.
 [12 <./srcfigs/edwindow.jpg>]
 File: figs/aplkb-largekeys.jpg Graphic file (type jpg)
 <use figs/aplkb-largekeys.jpg>
-Package pdftex.def Info: figs/aplkb-largekeys.jpg  used on input line 655.
+Package pdftex.def Info: figs/aplkb-largekeys.jpg  used on input line 657.
 (pdftex.def)             Requested size: 498.36066pt x 221.32631pt.
 
-Overfull \hbox (14.66379pt too wide) in paragraph at lines 654--656
+Overfull \hbox (14.66379pt too wide) in paragraph at lines 656--658
 [] 
  []
 
 [13]
 File: command.pdf Graphic file (type pdf)
 <use command.pdf>
-Package pdftex.def Info: command.pdf  used on input line 661.
+Package pdftex.def Info: command.pdf  used on input line 663.
 (pdftex.def)             Requested size: 11.33592pt x 11.33989pt.
  [14]
 Chapter 3.
 File: command.pdf Graphic file (type pdf)
 <use command.pdf>
-Package pdftex.def Info: command.pdf  used on input line 723.
+Package pdftex.def Info: command.pdf  used on input line 725.
 (pdftex.def)             Requested size: 10.57224pt x 10.57487pt.
 [15
 
 ]
 File: command.pdf Graphic file (type pdf)
 <use command.pdf>
-Package pdftex.def Info: command.pdf  used on input line 730.
+Package pdftex.def Info: command.pdf  used on input line 732.
 (pdftex.def)             Requested size: 10.57224pt x 10.57487pt.
 
 
-LaTeX Warning: Command \textendash invalid in math mode on input line 759.
+LaTeX Warning: Command \textendash invalid in math mode on input line 761.
 
 [16] [17]
-Overfull \hbox (2.53639pt too wide) in paragraph at lines 846--853
+Overfull \hbox (2.53639pt too wide) in paragraph at lines 848--855
 \OT1/cmr/m/n/14.4 By ap-ply-ing the rule [][]\OT1/cmtt/m/n/14.4 (f\apl ^^[\OT1/
 cmtt/m/n/14.4 )g(h\apl ^^[\OT1/cmtt/m/n/14.4 ) to (f g h)\apl ^^[[]\OT1/cmr/m/n
 /14.4 , the ex-pres-sion [][]\OT1/cmtt/m/n/14.4 ((+/ -\apl ^^[\OT1/cmtt/m/n/14.
@@ -1118,10 +1126,10 @@ cmtt/m/n/14.4 )g(h\apl ^^[\OT1/cmtt/m/n/14.4 ) to (f g h)\apl ^^[[]\OT1/cmr/m/n
 <srcfigs/boxon.jpg, id=129, 207.02344pt x 240.14719pt>
 File: srcfigs/boxon.jpg Graphic file (type jpg)
 <use srcfigs/boxon.jpg>
-Package pdftex.def Info: srcfigs/boxon.jpg  used on input line 907.
+Package pdftex.def Info: srcfigs/boxon.jpg  used on input line 909.
 (pdftex.def)             Requested size: 207.02292pt x 240.14658pt.
 
-Overfull \hbox (7.04749pt too wide) in paragraph at lines 902--911
+Overfull \hbox (7.04749pt too wide) in paragraph at lines 904--913
 \OT1/cmr/m/n/14.4 The re-sult is shown in Fig-ure 3.2[] be-low. As you can see,
  the op-tion [][]\OT1/cmtt/m/n/14.4 -trains=tree
  []
@@ -1130,55 +1138,121 @@ Overfull \hbox (7.04749pt too wide) in paragraph at lines 902--911
 <srcfigs/avg-in-box-format.jpg, id=133, 213.04594pt x 188.20313pt>
 File: srcfigs/avg-in-box-format.jpg Graphic file (type jpg)
 <use srcfigs/avg-in-box-format.jpg>
-Package pdftex.def Info: srcfigs/avg-in-box-format.jpg  used on input line 952.
+Package pdftex.def Info: srcfigs/avg-in-box-format.jpg  used on input line 954.
 
 (pdftex.def)             Requested size: 213.04541pt x 188.20265pt.
  [20 <./srcfigs/avg-in-box-format.jpg>]
 <srcfigs/kaplan-meyer-xbar.jpg, id=137, 335.00156pt x 280.04625pt>
 File: srcfigs/kaplan-meyer-xbar.jpg Graphic file (type jpg)
 <use srcfigs/kaplan-meyer-xbar.jpg>
-Package pdftex.def Info: srcfigs/kaplan-meyer-xbar.jpg  used on input line 962.
+Package pdftex.def Info: srcfigs/kaplan-meyer-xbar.jpg  used on input line 964.
 
 (pdftex.def)             Requested size: 335.00073pt x 280.04555pt.
 <srcfigs/kaplan-meyer-steps.jpg, id=138, 320.69812pt x 263.48438pt>
 File: srcfigs/kaplan-meyer-steps.jpg Graphic file (type jpg)
 <use srcfigs/kaplan-meyer-steps.jpg>
-Package pdftex.def Info: srcfigs/kaplan-meyer-steps.jpg  used on input line 967
+Package pdftex.def Info: srcfigs/kaplan-meyer-steps.jpg  used on input line 969
 .
 (pdftex.def)             Requested size: 320.69733pt x 263.48372pt.
  [21 <./srcfigs/kaplan-meyer-xbar.jpg> <./srcfigs/kaplan-meyer-steps.jpg>]
 <srcfigs/kaplan-meyer-line.jpg, id=142, 332.74312pt x 268.75406pt>
 File: srcfigs/kaplan-meyer-line.jpg Graphic file (type jpg)
 <use srcfigs/kaplan-meyer-line.jpg>
-Package pdftex.def Info: srcfigs/kaplan-meyer-line.jpg  used on input line 973.
+Package pdftex.def Info: srcfigs/kaplan-meyer-line.jpg  used on input line 975.
 
 (pdftex.def)             Requested size: 332.7423pt x 268.7534pt.
 <srcfigs/kaplan-meyer-tower.jpg, id=143, 276.28218pt x 228.855pt>
 File: srcfigs/kaplan-meyer-tower.jpg Graphic file (type jpg)
 <use srcfigs/kaplan-meyer-tower.jpg>
-Package pdftex.def Info: srcfigs/kaplan-meyer-tower.jpg  used on input line 979
+Package pdftex.def Info: srcfigs/kaplan-meyer-tower.jpg  used on input line 981
 .
 (pdftex.def)             Requested size: 276.2815pt x 228.85443pt.
  [22 <./srcfigs/kaplan-meyer-line.jpg> <./srcfigs/kaplan-meyer-tower.jpg>]
 Chapter 4.
 
-Overfull \hbox (5.36723pt too wide) in paragraph at lines 1006--1007
+Overfull \hbox (5.36723pt too wide) in paragraph at lines 1008--1009
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 [23
 
-] [24] [25] (./apltutorial.aux)
+] [24]
+File: command.pdf Graphic file (type pdf)
+<use command.pdf>
+Package pdftex.def Info: command.pdf  used on input line 1086.
+(pdftex.def)             Requested size: 10.57224pt x 10.57487pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1085--1088
+
+ []
+
+<srcfigs/split.jpg, id=154, 438.13687pt x 204.765pt>
+File: srcfigs/split.jpg Graphic file (type jpg)
+<use srcfigs/split.jpg>
+Package pdftex.def Info: srcfigs/split.jpg  used on input line 1089.
+(pdftex.def)             Requested size: 438.13579pt x 204.76448pt.
+[25 <./srcfigs/split.jpg>]
+File: figs/apl-keyboard.jpg Graphic file (type jpg)
+<use figs/apl-keyboard.jpg>
+Package pdftex.def Info: figs/apl-keyboard.jpg  used on input line 1092.
+(pdftex.def)             Requested size: 426.79134pt x 157.84993pt.
+<srcfigs/random-walk.jpg, id=158, 330.48468pt x 270.25969pt>
+File: srcfigs/random-walk.jpg Graphic file (type jpg)
+<use srcfigs/random-walk.jpg>
+Package pdftex.def Info: srcfigs/random-walk.jpg  used on input line 1104.
+(pdftex.def)             Requested size: 330.48387pt x 270.25902pt.
+ [26 <./srcfigs/random-walk.jpg>]
+Chapter 5.
+<srcfigs/nget.jpg, id=162, 467.49657pt x 240.9pt>
+File: srcfigs/nget.jpg Graphic file (type jpg)
+<use srcfigs/nget.jpg>
+Package pdftex.def Info: srcfigs/nget.jpg  used on input line 1134.
+(pdftex.def)             Requested size: 467.49542pt x 240.8994pt.
+
+Overfull \hbox (42.54794pt too wide) in paragraph at lines 1134--1135
+[][] 
+ []
+
+[27
+
+ <./srcfigs/nget.jpg>]
+<srcfigs/nget-txt.jpg, id=166, 300.3722pt x 351.56343pt>
+File: srcfigs/nget-txt.jpg Graphic file (type jpg)
+<use srcfigs/nget-txt.jpg>
+Package pdftex.def Info: srcfigs/nget-txt.jpg  used on input line 1151.
+(pdftex.def)             Requested size: 300.37144pt x 351.56256pt.
+ [28 <./srcfigs/nget-txt.jpg>]
+Chapter 6.
+<srcfigs/CSVemerg.png, id=170, 379.4175pt x 210.7875pt>
+File: srcfigs/CSVemerg.png Graphic file (type png)
+<use srcfigs/CSVemerg.png>
+Package pdftex.def Info: srcfigs/CSVemerg.png  used on input line 1201.
+(pdftex.def)             Requested size: 379.41656pt x 210.78699pt.
+[29
+
+ <./srcfigs/CSVemerg.png>]
+<srcfigs/CSV-remove-header.png, id=177, 487.8225pt x 228.855pt>
+File: srcfigs/CSV-remove-header.png Graphic file (type png)
+<use srcfigs/CSV-remove-header.png>
+Package pdftex.def Info: srcfigs/CSV-remove-header.png  used on input line 1220
+.
+(pdftex.def)             Requested size: 487.8213pt x 228.85443pt.
+
+Overfull \hbox (4.12444pt too wide) in paragraph at lines 1219--1221
+[] 
+ []
+
+[30 <./srcfigs/CSV-remove-header.png>] (./apltutorial.aux)
  ***********
 LaTeX2e <2023-06-01>
 L3 programming layer <2023-06-05>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 21353 strings out of 477695
- 403482 string characters out of 5831649
+ 21423 strings out of 477695
+ 405215 string characters out of 5831649
  1894759 words of memory out of 5000000
- 41444 multiletter control sequences out of 15000+600000
+ 41511 multiletter control sequences out of 15000+600000
  525484 words of font info for 81 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  99i,8n,103p,460b,981s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1197,10 +1271,10 @@ c/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/symbols/msam10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1440.
 pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1440.pfb></usr/share/texm
 f/fonts/type1/public/cm-super/sftt1440.pfb>
-Output written on apltutorial.pdf (27 pages, 650577 bytes).
+Output written on apltutorial.pdf (32 pages, 813345 bytes).
 PDF statistics:
- 247 PDF objects out of 1000 (max. 8388607)
- 127 compressed objects within 2 object streams
+ 276 PDF objects out of 1000 (max. 8388607)
+ 139 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 214 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 244 words of extra memory for PDF output out of 10000 (max. 10000000)
 
