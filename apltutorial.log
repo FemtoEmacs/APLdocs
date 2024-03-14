@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.3.4)  13 MAR 2024 23:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.3.4)  14 MAR 2024 08:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1223,36 +1223,47 @@ Package pdftex.def Info: srcfigs/nget-txt.jpg  used on input line 1151.
 (pdftex.def)             Requested size: 300.37144pt x 351.56256pt.
  [28 <./srcfigs/nget-txt.jpg>]
 Chapter 6.
-<srcfigs/CSVemerg.png, id=170, 379.4175pt x 210.7875pt>
+<srcfigs/CSVemerg.png, id=170, 284.56313pt x 158.09062pt>
 File: srcfigs/CSVemerg.png Graphic file (type png)
 <use srcfigs/CSVemerg.png>
 Package pdftex.def Info: srcfigs/CSVemerg.png  used on input line 1201.
-(pdftex.def)             Requested size: 379.41656pt x 210.78699pt.
+(pdftex.def)             Requested size: 284.56242pt x 158.09023pt.
 [29
 
  <./srcfigs/CSVemerg.png>]
-<srcfigs/CSV-remove-header.png, id=177, 487.8225pt x 228.855pt>
+<srcfigs/CSV-remove-header.png, id=177, 292.84406pt x 137.01187pt>
 File: srcfigs/CSV-remove-header.png Graphic file (type png)
 <use srcfigs/CSV-remove-header.png>
-Package pdftex.def Info: srcfigs/CSV-remove-header.png  used on input line 1220
+Package pdftex.def Info: srcfigs/CSV-remove-header.png  used on input line 1219
 .
-(pdftex.def)             Requested size: 487.8213pt x 228.85443pt.
+(pdftex.def)             Requested size: 292.84334pt x 137.01154pt.
+<srcfigs/CSV-sum-lines.png, id=178, 254.45062pt x 40.65187pt>
+File: srcfigs/CSV-sum-lines.png Graphic file (type png)
+<use srcfigs/CSV-sum-lines.png>
+Package pdftex.def Info: srcfigs/CSV-sum-lines.png  used on input line 1226.
+(pdftex.def)             Requested size: 254.45pt x 40.65176pt.
+<srcfigs/CSV-eurosep.png, id=179, 441.65pt x 147.55125pt>
+File: srcfigs/CSV-eurosep.png Graphic file (type png)
+<use srcfigs/CSV-eurosep.png>
+Package pdftex.def Info: srcfigs/CSV-eurosep.png  used on input line 1246.
+(pdftex.def)             Requested size: 441.64891pt x 147.55087pt.
 
-Overfull \hbox (4.12444pt too wide) in paragraph at lines 1219--1221
-[] 
+Overfull \hbox (16.70143pt too wide) in paragraph at lines 1246--1247
+[][] 
  []
 
-[30 <./srcfigs/CSV-remove-header.png>] (./apltutorial.aux)
+[30 <./srcfigs/CSV-remove-header.png> <./srcfigs/CSV-sum-lines.png> <./srcfigs/
+CSV-eurosep.png>] (./apltutorial.aux)
  ***********
 LaTeX2e <2023-06-01>
 L3 programming layer <2023-06-05>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 21423 strings out of 477695
- 405215 string characters out of 5831649
+ 21437 strings out of 477695
+ 405647 string characters out of 5831649
  1894759 words of memory out of 5000000
- 41511 multiletter control sequences out of 15000+600000
+ 41525 multiletter control sequences out of 15000+600000
  525484 words of font info for 81 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  99i,8n,103p,460b,981s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1271,10 +1282,10 @@ c/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/symbols/msam10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1440.
 pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1440.pfb></usr/share/texm
 f/fonts/type1/public/cm-super/sftt1440.pfb>
-Output written on apltutorial.pdf (32 pages, 813345 bytes).
+Output written on apltutorial.pdf (32 pages, 843148 bytes).
 PDF statistics:
- 276 PDF objects out of 1000 (max. 8388607)
+ 280 PDF objects out of 1000 (max. 8388607)
  139 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 244 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 254 words of extra memory for PDF output out of 10000 (max. 10000000)
 

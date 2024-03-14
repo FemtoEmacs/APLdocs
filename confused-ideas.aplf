@@ -1,0 +1,83 @@
+
+      satei ← (⊣ ≠ ⊢) ∧ ' ' ≠ ⊢
+      ',' satei 'She walks in beauty, like the night'
+1 1 1 0 1 1 1 1 1 0 1 1 0 1 1 1 1 1 1 0 0 1 1 1 1 0 1 1 1 0 1 1 1 1 1
+      ','(satei ⊆ ⊢) 'She walks in beauty, like the night'
+ She  walks  in  beauty  like  the  night
+
+     ({~⍵ ∊ ';., '} ⊆ ⊢) 'She walks in beauty, like the night.'
+
+({~⍵ ∊ ';., '} ⊆ ⊢) 'She walks in beauty, like the night.'
+
+     {~(⍵ ∊ ';., ')}  ⍝ {f Y} to (f {Y})  
+     (~ {⍵ ∊ ';., '}) ⍝ {X f A} to (A (⊢f⊣) {X})
+     (~ (';., ' (⊢∊⊣) {⍵})) ⍝ {⍵} to ⊢
+     (~ (';., ' (⊢∊⊣) ⊢))		 
+     ((~ ';., ' (⊢∊⊣) ⊢) ⊆⊢) 'She walks in beauty, like the night.'
+
+     spl ← {⍵ ⊆ ⍨ ~ ⍵ ∊ ⍺}
+      ',. ' spl 'She walks in beauty, like the night.'
+ She  walks  in  beauty  like  the  night
+ {~ ⍵ ∊ ⍺} ⍝ {f Y} to (f {Y})
+ (~ {⍵ ∊ ⍺}) ⍝ (~ ({⍵} ∊ {⍺})) ⍝ {⍵} to ⊢, {⍺} to ⊣
+ (~ ⊢∊⊣)
+
+     dff ← ~ ⊢∊⊣
+      ',. ' (dff ⊆ ⊢) 'She walks in beauty, like the night.'
+ She  walks  in  beauty  like  the  night
+      ',. ' ((~ ⊢∊⊣) ⊆ ⊢) 'She walks in beauty, like the night.'
+ She  walks  in  beauty  like  the  night
+
+ Fibonacci
+ ↑0 1↓↑+.×/40/⊂2 2⍴1 1 1 0
+ 102334155
+ 63245986
+
+       {2⌷∊+.×/⍵/⊂∘.∨⍨1 0} 40
+102334155
+
+Pascal Triangle
+     P←V∘.!V←⍳1+N←20
+      (2/¨⍳N←5)↑¨⊂P
+ 1  1 2  1 2 3  1 2 3 4  1 2 3 4  5
+    0 1  0 1 3  0 1 3 6  0 1 3 6 10
+         0 0 1  0 0 1 4  0 0 1 4 10
+                0 0 0 1  0 0 0 1  5
+                         0 0 0 0  1
+
+ Which is more readable? Python?
+def large(arr):
+
+    #root element varible 
+    max_ = arr[0]
+    for ele in arr:
+        if(ele > max_):
+           max_ = ele
+    return max_ 
+
+
+list1 = [1,4,5,2,6]
+result = large(list1)
+print(result)
+
+or APL: ⌈/
+large ← ⌈/
+
+ 
+str ← 'She walks in beauty, like the night'
+      ', ' member str
+0 0 0 1 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 1 1 0 0 0 0 1 0 0 0 1 0 0 0 0 0
+      (', ' member str) ⊆ str
+          ,
+      notmember ← {~ ⍵ ∊ ⍺}
+      ', .'notmember 'She walks, in beauty'
+1 1 1 0 1 1 1 1 1 0 0 1 1 0 1 1 1 1 1 1
+      ', .'notmember 'She walks, in beauty'
+1 1 1 0 1 1 1 1 1 0 0 1 1 0 1 1 1 1 1 1
+      {', .' notmember str) ⊆ str
+      }                                                                          
+ {}
+      (', .' notmember str) ⊆ str
+ She  walks  in  beauty  like  the  night
+     (', .' {~ ⍵ ∊ ⍺} str)  ⊆ str
+ She  walks  in  beauty  like  the  night

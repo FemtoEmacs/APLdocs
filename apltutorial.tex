@@ -1215,226 +1215,35 @@ argument indicates whether there
 is a head line or not. The
 value 1 indicates that there
 is a head line.
-
-\noindent
+\begin{quote}
 \includegraphics{srcfigs/CSV-remove-header.png}
+\end{quote}
+It is more useful to learn the total
+number of candidates in each year.
+This can be achieved by summing up
+each line of the table with +/⊃⎕CSV.
+\begin{quote}
+\includegraphics{srcfigs/CSV-sum-lines.png}
+\end{quote}
+Many European countries use the decimal
+comma to separate whole numbers from fractions.
+Therefore, the comma is not available for
+the elements of a table line. Consequently,
+a European table may look like the one shown below.
+\begin{verbatim}
+MD;  DO; IMG
+493; 284; 152
+490; 282; 171
+500; 310; 190
+418; 260; 188
+270; 200; 189
+\end{verbatim}
 
+Below, you can see how to specify
+the semicolon as the separator
+for a European table.
+\begin{quote}
+\includegraphics{srcfigs/CSV-eurosep.png}
+\end{quote}
 
 \end{document}
-
-      satei ← (⊣ ≠ ⊢) ∧ ' ' ≠ ⊢
-      ',' satei 'She walks in beauty, like the night'
-1 1 1 0 1 1 1 1 1 0 1 1 0 1 1 1 1 1 1 0 0 1 1 1 1 0 1 1 1 0 1 1 1 1 1
-      ','(satei ⊆ ⊢) 'She walks in beauty, like the night'
- She  walks  in  beauty  like  the  night
-
-     ({~⍵ ∊ ';., '} ⊆ ⊢) 'She walks in beauty, like the night.'
-
-({~⍵ ∊ ';., '} ⊆ ⊢) 'She walks in beauty, like the night.'
-
-     {~(⍵ ∊ ';., ')}  ⍝ {f Y} to (f {Y})  
-     (~ {⍵ ∊ ';., '}) ⍝ {X f A} to (A (⊢f⊣) {X})
-     (~ (';., ' (⊢∊⊣) {⍵})) ⍝ {⍵} to ⊢
-     (~ (';., ' (⊢∊⊣) ⊢))		 
-     ((~ ';., ' (⊢∊⊣) ⊢) ⊆⊢) 'She walks in beauty, like the night.'
-
-     spl ← {⍵ ⊆ ⍨ ~ ⍵ ∊ ⍺}
-      ',. ' spl 'She walks in beauty, like the night.'
- She  walks  in  beauty  like  the  night
- {~ ⍵ ∊ ⍺} ⍝ {f Y} to (f {Y})
- (~ {⍵ ∊ ⍺}) ⍝ (~ ({⍵} ∊ {⍺})) ⍝ {⍵} to ⊢, {⍺} to ⊣
- (~ ⊢∊⊣)
-
-     dff ← ~ ⊢∊⊣
-      ',. ' (dff ⊆ ⊢) 'She walks in beauty, like the night.'
- She  walks  in  beauty  like  the  night
-      ',. ' ((~ ⊢∊⊣) ⊆ ⊢) 'She walks in beauty, like the night.'
- She  walks  in  beauty  like  the  night
-
- Fibonacci
- ↑0 1↓↑+.×/40/⊂2 2⍴1 1 1 0
- 102334155
- 63245986
-
-       {2⌷∊+.×/⍵/⊂∘.∨⍨1 0} 40
-102334155
-
-Pascal Triangle
-     P←V∘.!V←⍳1+N←20
-      (2/¨⍳N←5)↑¨⊂P
- 1  1 2  1 2 3  1 2 3 4  1 2 3 4  5
-    0 1  0 1 3  0 1 3 6  0 1 3 6 10
-         0 0 1  0 0 1 4  0 0 1 4 10
-                0 0 0 1  0 0 0 1  5
-                         0 0 0 0  1
-
- Which is more readable? Python?
-def large(arr):
-
-    #root element varible 
-    max_ = arr[0]
-    for ele in arr:
-        if(ele > max_):
-           max_ = ele
-    return max_ 
-
-
-list1 = [1,4,5,2,6]
-result = large(list1)
-print(result)
-
-or APL: ⌈/
-large ← ⌈/
-
- 
-     ⎕CSV 'teste.csv' ⍬ 4 1
-           34  78  93  45
-
-teste.csv
-34,78,93,45
-
-
-teste.csv
-horas, tempo, minhoca, ponga
-34,    78,    93,      45
-45,    82,    93,      56
-38,    26,    17,      12
-
-      ⎕CSV 'teste.csv' ⍬ ⍬ 1
-  34  78  93  45    horas  tempo  minhoca  ponga
-  45  82  93  56
-  38  26  17  12
-
-     (⊃⎕CSV 'teste.csv' ⍬ ⍬ 1) ⍝ Remove head
- 34  78  93  45
- 45  82  93  56
- 38  26  17  12
-
- ⍝ Right reduce to get last column
-      (⊢/⎕CSV 'teste.csv' ⍬ 4)
- ponga  45 56 12
-
- ⍝ Get last column, drop head
-      1 ↓ ⊢/⎕CSV 'teste.csv' ⍬ 4
-45 56 12
-
-⍝ Sum last column
-      +/1 ↓ ⊢/⎕CSV 'teste.csv' ⍬ 4
-113
-
-teste.csv
-horas, tempo, minhoca, ponga
-34,    78,    93,      45
-45,    82,    93,      56
-38,    26,    17,      12
-41,    38,    29,      16
-18,    20,    1.5,     8
-
-      1 ⌷ ⎕CSV 'teste.csv' ⍬ 4
- horas  tempo  minhoca  ponga
-      2 ⌷ ⎕CSV 'teste.csv' ⍬ 4
-34 78 93 45
-      3 ⌷ ⎕CSV 'teste.csv' ⍬ 4
-45 82 93 56
-
-     data ← ⊃ ⎕CSV 'teste.csv' ⍬ ⍬ 1
-     data
- 34  78  93   45
- 45  82  93   56
- 38  26  17   12
- 41  38  29   16
- 18  20  1.5  8
-
-      data ← ⊃ ⎕CSV 'teste.csv' ⍬ ⍬ 1
-      data
- 34  78  93   45
- 45  82  93   56
- 38  26  17   12
- 41  38  29   16
- 18  20  1.5  8
-
-      data[2;2]
- 82
-      data[2;3]
- 93
-     data[1;]
- 34  78  93  45
-      data[;2]
- 78  82  26  38  20
-
-      v ← (⊃⎕CSV 'teste.csv' ⍬ ⍬ 1)[;2]
-      v
- 78  82  26  38  20
-
-             v ← ⎕CSV 'teste.csv' ⍬ 4
-      v
- horas  tempo  minhoca  ponga
-    34     78     93       45
-    45     82     93       56
-    38     26     17       12
-    41     38     29       16
-    18     20      1.5      8
-      1 ↓ v
-34 78 93   45
-45 82 93   56
-38 26 17   12
-41 38 29   16
-18 20  1.5  8
-
-     v[;2]
- tempo  78 82 26 38 20
-      1↓v[;2]
-78 82 26 38 20
-      +/1↓v[;2]
-244
-
-#? ⍠  -- introduz variant
-
-eteste.csv
-an    vuee
-34    78
-45    82
-64    38
-64    38
-64    38
-64    38
-64    38
-64    38
-
-     ⎕CSV⍠'Separator' ' '⊢ 'eteste.csv'⍬ 4 1
- 34        78   an        vuee
- 45        82
- 64        38
- 64        38
- 64        38
- 64        38
- 64        38
- 64        38
-              
-cteste.csv
-anta;  vuee; turbo
-34;    78;   435
-45;    82;   9
-
-      ⎕CSV⍠'Separator' ';'⊢ 'cteste.csv'⍬ 4 1
- 34 78 435   anta  vuee  turbo
- 45 82   9
-
- 
-str ← 'She walks in beauty, like the night'
-      ', ' member str
-0 0 0 1 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 1 1 0 0 0 0 1 0 0 0 1 0 0 0 0 0
-      (', ' member str) ⊆ str
-          ,
-      notmember ← {~ ⍵ ∊ ⍺}
-      ', .'notmember 'She walks, in beauty'
-1 1 1 0 1 1 1 1 1 0 0 1 1 0 1 1 1 1 1 1
-      ', .'notmember 'She walks, in beauty'
-1 1 1 0 1 1 1 1 1 0 0 1 1 0 1 1 1 1 1 1
-      {', .' notmember str) ⊆ str
-      }                                                                          
- {}
-      (', .' notmember str) ⊆ str
- She  walks  in  beauty  like  the  night
-     (', .' {~ ⍵ ∊ ⍺} str)  ⊆ str
- She  walks  in  beauty  like  the  night
